@@ -1,0 +1,291 @@
+
+Anthony@DESKTOP-AFBLSVS MINGW64 ~/Documents/demo-git
+$ ls
+
+Anthony@DESKTOP-AFBLSVS MINGW64 ~/Documents/demo-git
+$ git init
+Initialized empty Git repository in C:/Users/Anthony/Documents/demo-git/.git/
+
+Anthony@DESKTOP-AFBLSVS MINGW64 ~/Documents/demo-git (master)
+$ ls
+
+Anthony@DESKTOP-AFBLSVS MINGW64 ~/Documents/demo-git (master)
+$ cd ..
+
+Anthony@DESKTOP-AFBLSVS MINGW64 ~/Documents
+$ cd demo-git/
+
+Anthony@DESKTOP-AFBLSVS MINGW64 ~/Documents/demo-git (master)
+$ nvim documento_en_master_branch.txt
+
+Anthony@DESKTOP-AFBLSVS MINGW64 ~/Documents/demo-git (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        documento_en_master_branch.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Anthony@DESKTOP-AFBLSVS MINGW64 ~/Documents/demo-git (master)
+$ git add documento_en_master_branch.txt
+
+Anthony@DESKTOP-AFBLSVS MINGW64 ~/Documents/demo-git (master)
+$ nvim otro_documento_en_master_branch.txt
+
+Anthony@DESKTOP-AFBLSVS MINGW64 ~/Documents/demo-git (master)
+$ ls
+documento_en_master_branch.txt  otro_documento_en_master_branch.txt
+
+Anthony@DESKTOP-AFBLSVS MINGW64 ~/Documents/demo-git (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   documento_en_master_branch.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        otro_documento_en_master_branch.txt
+
+
+Anthony@DESKTOP-AFBLSVS MINGW64 ~/Documents/demo-git (master)
+$ git commit -m "este es el primer documento del repositorio"
+[master (root-commit) 2682925] este es el primer documento del repositorio
+ 1 file changed, 1 insertion(+)
+ create mode 100644 documento_en_master_branch.txt
+
+Anthony@DESKTOP-AFBLSVS MINGW64 ~/Documents/demo-git (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        otro_documento_en_master_branch.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Anthony@DESKTOP-AFBLSVS MINGW64 ~/Documents/demo-git (master)
+$ ls
+documento_en_master_branch.txt  otro_documento_en_master_branch.txt
+
+Anthony@DESKTOP-AFBLSVS MINGW64 ~/Documents/demo-git (master)
+$ git add otro_documento_en_master_branch.txt
+
+Anthony@DESKTOP-AFBLSVS MINGW64 ~/Documents/demo-git (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   otro_documento_en_master_branch.txt
+
+
+Anthony@DESKTOP-AFBLSVS MINGW64 ~/Documents/demo-git (master)
+$ ls
+documento_en_master_branch.txt  otro_documento_en_master_branch.txt
+
+Anthony@DESKTOP-AFBLSVS MINGW64 ~/Documents/demo-git (master)
+$ nvim documento_en_master_branch.txt
+
+Anthony@DESKTOP-AFBLSVS MINGW64 ~/Documents/demo-git (master)
+$ ls
+documento_en_master_branch.txt  otro_documento_en_master_branch.txt
+
+Anthony@DESKTOP-AFBLSVS MINGW64 ~/Documents/demo-git (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   otro_documento_en_master_branch.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   documento_en_master_branch.txt
+
+
+Anthony@DESKTOP-AFBLSVS MINGW64 ~/Documents/demo-git (master)
+$ git diff
+diff --git a/documento_en_master_branch.txt b/documento_en_master_branch.txt
+index 8c85d98..f0fd014 100644
+--- a/documento_en_master_branch.txt
++++ b/documento_en_master_branch.txt
+@@ -1 +1,2 @@
+ este es un documento en el master branch bien chimbita
++este es el primer cambio
+
+Anthony@DESKTOP-AFBLSVS MINGW64 ~/Documents/demo-git (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   otro_documento_en_master_branch.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   documento_en_master_branch.txt
+
+
+Anthony@DESKTOP-AFBLSVS MINGW64 ~/Documents/demo-git (master)
+$ git add documento_en_master_branch.txt
+
+Anthony@DESKTOP-AFBLSVS MINGW64 ~/Documents/demo-git (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   documento_en_master_branch.txt
+        new file:   otro_documento_en_master_branch.txt
+
+
+Anthony@DESKTOP-AFBLSVS MINGW64 ~/Documents/demo-git (master)
+$ git commit -m "cambios en el primer archivo y un nuevo archivo"
+[master 21bd720] cambios en el primer archivo y un nuevo archivo
+ 2 files changed, 2 insertions(+)
+ create mode 100644 otro_documento_en_master_branch.txt
+
+Anthony@DESKTOP-AFBLSVS MINGW64 ~/Documents/demo-git (master)
+$ git log --oneline
+21bd720 (HEAD -> master) cambios en el primer archivo y un nuevo archivo
+2682925 este es el primer documento del repositorio
+
+Anthony@DESKTOP-AFBLSVS MINGW64 ~/Documents/demo-git (master)
+$ git checkout -b segundo-branch
+Switched to a new branch 'segundo-branch'
+
+Anthony@DESKTOP-AFBLSVS MINGW64 ~/Documents/demo-git (segundo-branch)
+$ ls
+documento_en_master_branch.txt  otro_documento_en_master_branch.txt
+
+Anthony@DESKTOP-AFBLSVS MINGW64 ~/Documents/demo-git (segundo-branch)
+$ nvim otro_documento_en_master_branch.txt
+
+Anthony@DESKTOP-AFBLSVS MINGW64 ~/Documents/demo-git (segundo-branch)
+$ git status
+On branch segundo-branch
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   otro_documento_en_master_branch.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Anthony@DESKTOP-AFBLSVS MINGW64 ~/Documents/demo-git (segundo-branch)
+$ git add otro_documento_en_master_branch.txt
+
+Anthony@DESKTOP-AFBLSVS MINGW64 ~/Documents/demo-git (segundo-branch)
+$ git commit -m "estoy haciendo un commit desde el segundo branch"
+[segundo-branch 38b67d1] estoy haciendo un commit desde el segundo branch
+ 1 file changed, 1 insertion(+)
+
+Anthony@DESKTOP-AFBLSVS MINGW64 ~/Documents/demo-git (segundo-branch)
+$ git status
+On branch segundo-branch
+nothing to commit, working tree clean
+
+Anthony@DESKTOP-AFBLSVS MINGW64 ~/Documents/demo-git (segundo-branch)
+$ git checkout master
+Switched to branch 'master'
+
+Anthony@DESKTOP-AFBLSVS MINGW64 ~/Documents/demo-git (master)
+$ git merge segundo-branch
+Updating 21bd720..38b67d1
+Fast-forward
+ otro_documento_en_master_branch.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+Anthony@DESKTOP-AFBLSVS MINGW64 ~/Documents/demo-git (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Anthony@DESKTOP-AFBLSVS MINGW64 ~/Documents/demo-git (master)
+$ git log --oneline --graph --all
+* 38b67d1 (HEAD -> master, segundo-branch) estoy haciendo un commit desde el segundo branch
+* 21bd720 cambios en el primer archivo y un nuevo archivo
+* 2682925 este es el primer documento del repositorio
+
+Anthony@DESKTOP-AFBLSVS MINGW64 ~/Documents/demo-git (master)
+$ git push
+fatal: No configured push destination.
+Either specify the URL from the command-line or configure a remote repository using
+
+    git remote add <name> <url>
+
+and then push using the remote name
+
+    git push <name>
+
+
+Anthony@DESKTOP-AFBLSVS MINGW64 ~/Documents/demo-git (master)
+$ git remote add origin https://github.com/AnthKta/curso-java-chimbita.git
+
+Anthony@DESKTOP-AFBLSVS MINGW64 ~/Documents/demo-git (master)
+$ git push - origin master
+error: src refspec origin does not match any
+error: failed to push some refs to '-'
+
+Anthony@DESKTOP-AFBLSVS MINGW64 ~/Documents/demo-git (master)
+$ git push -u origin master
+remote: Invalid username or token. Password authentication is not supported for Git operations.
+fatal: Authentication failed for 'https://github.com/AnthKta/curso-java-chimbita.git/'
+
+Anthony@DESKTOP-AFBLSVS MINGW64 ~/Documents/demo-git (master)
+$ git push -u origin master
+remote: Invalid username or token. Password authentication is not supported for Git operations.
+fatal: Authentication failed for 'https://github.com/AnthKta/curso-java-chimbita.git/'
+
+Anthony@DESKTOP-AFBLSVS MINGW64 ~/Documents/demo-git (master)
+$ git remote add origin git@github.com:AnthKta/curso-java-chimbita.git
+error: remote origin already exists.
+
+Anthony@DESKTOP-AFBLSVS MINGW64 ~/Documents/demo-git (master)
+$ git push -u origin master
+remote: Invalid username or token. Password authentication is not supported for Git operations.
+fatal: Authentication failed for 'https://github.com/AnthKta/curso-java-chimbita.git/'
+
+Anthony@DESKTOP-AFBLSVS MINGW64 ~/Documents/demo-git (master)
+$ git remote -v
+origin  https://github.com/AnthKta/curso-java-chimbita.git (fetch)
+origin  https://github.com/AnthKta/curso-java-chimbita.git (push)
+
+Anthony@DESKTOP-AFBLSVS MINGW64 ~/Documents/demo-git (master)
+$ git remote set-url origin git@github.com:AnthKta/curso-java-chimbita.git
+
+Anthony@DESKTOP-AFBLSVS MINGW64 ~/Documents/demo-git (master)
+$ git remote -v
+origin  git@github.com:AnthKta/curso-java-chimbita.git (fetch)
+origin  git@github.com:AnthKta/curso-java-chimbita.git (push)
+
+Anthony@DESKTOP-AFBLSVS MINGW64 ~/Documents/demo-git (master)
+$ git push
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+Anthony@DESKTOP-AFBLSVS MINGW64 ~/Documents/demo-git (master)
+$ git push -u origin master
+Enumerating objects: 10, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (10/10), 932 bytes | 932.00 KiB/s, done.
+Total 10 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), done.
+To github.com:AnthKta/curso-java-chimbita.git
+ * [new branch]      master -> master
+branch 'master' set up to track 'origin/master'.
+
+Anthony@DESKTOP-AFBLSVS MINGW64 ~/Documents/demo-git (master)
+$
