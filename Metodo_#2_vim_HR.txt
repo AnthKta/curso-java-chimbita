@@ -1,0 +1,1 @@
+Este es el metodo #2 para generar un documento desde consola.

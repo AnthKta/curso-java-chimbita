@@ -1,0 +1,1 @@
+Comando para agregar un documento sin editor #1 echo
