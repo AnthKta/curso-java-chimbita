@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/TareasDaniel/TareasDaniel.iml" filepath="$PROJECT_DIR$/TareasDaniel/TareasDaniel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/curso-java-chimbita.iml" filepath="$PROJECT_DIR$/curso-java-chimbita.iml" />
+    </modules>
+  </component>
+</project>
