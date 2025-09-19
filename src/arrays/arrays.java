@@ -38,6 +38,11 @@ public class arrays {
       suma += valor;
       System.out.println("Suma cuando se le agrega " + valor + " es " + suma);
     }
-    System.out.println("Suma es igual a " + suma);
+
+    int maximo = notas3[0];
+    for (int valor2 : notas3){
+      maximo = (valor2 > maximo) ? valor2 : maximo; // logica terniaria
+    }
+    System.out.println("el valor maximo es " + maximo);
   }
 }
