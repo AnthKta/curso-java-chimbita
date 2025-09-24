@@ -1,2 +1,5 @@
 este es un documento en el master branch bien chimbita
 este es el primer cambio
+
+
+Este es un cambio realizado por Daniel el 11/08/2025
