@@ -1,0 +1,9 @@
+Crear una clase estudiante
+Basico
+Fields: name, studentID, grade
+Un constructor que inicialice todos los Fields
+un método que se llame printInfo() que imprima toda la información del estudiante
+Extra:
+Crear varios objetos de estudiante y meterlos todos en un array
+hacer un loop de este array e imprimir la información de cada estudiante
+
